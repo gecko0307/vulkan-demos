@@ -2321,7 +2321,7 @@ alias PFN_vkCmdEndRenderPass = nothrow void function(VkCommandBuffer commandBuff
 alias PFN_vkCmdExecuteCommands = nothrow void function(VkCommandBuffer commandBuffer, uint commandBufferCount, const VkCommandBuffer* pCommandBuffers);
 
 
-extern(Windows) {
+extern(System) {
     VkResult vkCreateInstance(
         const VkInstanceCreateInfo*                 pCreateInfo,
         const VkAllocationCallbacks*                pAllocator,
@@ -3193,7 +3193,7 @@ alias PFN_vkGetPhysicalDeviceSurfaceFormatsKHR = nothrow VkResult function(VkPhy
 alias PFN_vkGetPhysicalDeviceSurfacePresentModesKHR = nothrow VkResult function(VkPhysicalDevice physicalDevice, VkSurfaceKHR surface, uint* pPresentModeCount, VkPresentModeKHR* pPresentModes);
 
 
-extern(Windows) {
+extern(System) {
     void vkDestroySurfaceKHR(
         VkInstance                                  instance,
         VkSurfaceKHR                                surface,
@@ -3271,7 +3271,7 @@ alias PFN_vkAcquireNextImageKHR = nothrow VkResult function(VkDevice device, VkS
 alias PFN_vkQueuePresentKHR = nothrow VkResult function(VkQueue queue, const VkPresentInfoKHR* pPresentInfo);
 
 
-extern(Windows) {
+extern(System) {
     VkResult vkCreateSwapchainKHR(
         VkDevice                                    device,
         const VkSwapchainCreateInfoKHR*             pCreateInfo,
@@ -3386,7 +3386,7 @@ alias PFN_vkGetDisplayPlaneCapabilitiesKHR = nothrow VkResult function(VkPhysica
 alias PFN_vkCreateDisplayPlaneSurfaceKHR = nothrow VkResult function(VkInstance instance, const VkDisplaySurfaceCreateInfoKHR* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkSurfaceKHR* pSurface);
 
 
-extern(Windows) {
+extern(System) {
     VkResult vkGetPhysicalDeviceDisplayPropertiesKHR(
         VkPhysicalDevice                            physicalDevice,
         uint*                                   pPropertyCount,
@@ -3443,7 +3443,7 @@ struct VkDisplayPresentInfoKHR {
 
 alias PFN_vkCreateSharedSwapchainsKHR = nothrow VkResult function(VkDevice device, uint swapchainCount, const VkSwapchainCreateInfoKHR* pCreateInfos, const VkAllocationCallbacks* pAllocator, VkSwapchainKHR* pSwapchains);
 
-extern(Windows) {
+extern(System) {
     VkResult vkCreateSharedSwapchainsKHR(
         VkDevice                                    device,
         uint                                    swapchainCount,
@@ -3644,7 +3644,7 @@ version(Windows) {
         alias PFN_vkCreateWin32SurfaceKHR = nothrow VkResult function(VkInstance instance, const VkWin32SurfaceCreateInfoKHR* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkSurfaceKHR* pSurface);
         alias PFN_vkGetPhysicalDeviceWin32PresentationSupportKHR = nothrow VkBool32 function(VkPhysicalDevice physicalDevice, uint queueFamilyIndex);
 
-    extern(Windows) {
+    extern(System) {
         VkResult vkCreateWin32SurfaceKHR(
             VkInstance                                  instance,
             const VkWin32SurfaceCreateInfoKHR*          pCreateInfo,
@@ -3711,7 +3711,7 @@ enum VkDebugReportFlagBitsEXT {
 }
 alias VkFlags VkDebugReportFlagsEXT;
 
-alias PFN_vkDebugReportCallbackEXT = extern(Windows) VkBool32 function(
+alias PFN_vkDebugReportCallbackEXT = extern(System) VkBool32 function(
     VkDebugReportFlagsEXT                       flags,
     VkDebugReportObjectTypeEXT                  objectType,
     ulong                                    object,
@@ -3733,7 +3733,7 @@ alias PFN_vkCreateDebugReportCallbackEXT = nothrow VkResult function(VkInstance 
 alias PFN_vkDestroyDebugReportCallbackEXT = nothrow void function(VkInstance instance, VkDebugReportCallbackEXT callback, const VkAllocationCallbacks* pAllocator);
 alias PFN_vkDebugReportMessageEXT = nothrow void function(VkInstance instance, VkDebugReportFlagsEXT flags, VkDebugReportObjectTypeEXT objectType, ulong object, size_t location, int messageCode, const char* pLayerPrefix, const char* pMessage);
 
-extern(Windows) {
+extern(System) {
     VkResult vkCreateDebugReportCallbackEXT(
         VkInstance                                  instance,
         const VkDebugReportCallbackCreateInfoEXT*   pCreateInfo,
